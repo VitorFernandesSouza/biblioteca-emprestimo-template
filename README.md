@@ -1,55 +1,70 @@
-# PaginationHelper Experiment
+# Experimento - PaginationHelper
 
-This repository contains the programming task used in a controlled experiment designed to evaluate the impact of generative AI assistance on technical autonomy in Java development.
+Este repositório contém a tarefa de programação utilizada em um experimento controlado cujo objetivo é avaliar o impacto do uso de Inteligência Artificial generativa na autonomia técnica em atividades de desenvolvimento Java.
 
-## Research Context
+---
 
-The experiment investigates whether the use of large language models (LLMs) during programming activities influences:
+## Contexto da Pesquisa
 
-- Technical autonomy
-- Logical reasoning
-- Handling of edge cases
-- Code structure quality
-- Dependence on AI-generated solutions
+O experimento investiga se o uso de modelos de linguagem (LLMs) durante atividades de programação influencia:
 
-The task involves implementing a generic `PaginationHelper<T>` class in Java.
+- Autonomia técnica
+- Raciocínio lógico
+- Tratamento de casos de borda (edge cases)
+- Organização estrutural do código
+- Dependência de soluções geradas por IA
 
-## Task Description
+A atividade proposta consiste na implementação de uma classe genérica `PaginationHelper<T>`.
 
-Participants must complete the methods of the `PaginationHelper<T>` class, which provides paging information for a collection.
+---
 
-### Requirements
+## Descrição da Tarefa
 
-- `itemCount()` → returns total number of items.
-- `pageCount()` → returns total number of pages.
-- `pageItemCount(pageIndex)` → returns number of items on a page or -1 if invalid.
-- `pageIndex(itemIndex)` → returns page index for an item or -1 if invalid.
-- Indices are zero-based.
-- `itemsPerPage` must be ≥ 1.
+Os participantes devem completar os métodos da classe `PaginationHelper<T>`, responsável por fornecer informações de paginação de uma coleção.
 
-## Experimental Design
+### Requisitos
 
-The experiment is structured in two phases:
+- `itemCount()` → Retorna o número total de itens da coleção.
+- `pageCount()` → Retorna o número total de páginas.
+- `pageItemCount(pageIndex)` → Retorna a quantidade de itens em uma página ou -1 se o índice for inválido.
+- `pageIndex(itemIndex)` → Retorna o índice da página correspondente ao item ou -1 se o índice for inválido.
+- Os índices são baseados em zero (zero-based).
+- O parâmetro `itemsPerPage` deve ser maior ou igual a 1.
 
-- Phase 1: Task completed with access to generative AI.
-- Phase 2: Similar task completed without AI assistance.
+---
 
-Comparative analysis includes:
+## Estrutura Experimental
 
-- Functional correctness
-- Cyclomatic complexity
-- Edge case handling
-- Code organization
-- Behavioral interaction with AI
+O experimento é dividido em duas fases:
 
-## Project Structure
+### Fase 1
+Implementação da tarefa com acesso à Inteligência Artificial generativa.
+
+### Fase 2
+Implementação de tarefa semelhante sem acesso à IA.
+
+A comparação entre as fases considera:
+
+- Correção funcional
+- Complexidade ciclomática
+- Tratamento de casos de borda
+- Organização do código
+- Comportamento durante o uso (ou ausência) da IA
+
+---
+
+## Estrutura do Projeto
+
+```text
 src/
 ├─ main/java/
-│ └─ br/pucminas/experimento/service/PaginationHelper.java
+│  └─ br/pucminas/experimento/service/PaginationHelper.java
 └─ test/java/
-└─ br/pucminas/experimento/service/PaginationHelperTest.java
+   └─ br/pucminas/experimento/service/PaginationHelperTest.java
+```
+---
 
-## Technical Stack
+## Tecnologias Utilizadas
 
 - Java 17
 - Maven
@@ -57,4 +72,4 @@ src/
 
 ---
 
-This repository is part of an academic study on generative AI and software engineering education.
+Este repositório faz parte de um estudo acadêmico na área de Engenharia de Software e Inteligência Artificial aplicada à educação e prática de programação.
