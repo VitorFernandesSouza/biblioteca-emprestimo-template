@@ -69,9 +69,10 @@ public class TestesPokerSemDesempate {
                 empate, "2S AH 4H 5S 6C", "AD 4C 5H 6H 2C");
     }
 
-    private void executarTeste(String descricao, MaoPoker.Resultado esperado, String maoJogador, String maoOponente) {
-        MaoPoker jogador = new MaoPoker(maoJogador);
-        MaoPoker oponente = new MaoPoker(maoOponente);
+    private void executarTeste(String descricao, PokerHand.Resultado esperado, String maoJogador, String maoOponente) {
+        PokerHand jogador = new PokerHand(maoJogador);
+        PokerHand oponente = new PokerHand(maoOponente);
         assertEquals(descricao + ":", esperado, jogador.compararCom(oponente));
     }
+
 }
