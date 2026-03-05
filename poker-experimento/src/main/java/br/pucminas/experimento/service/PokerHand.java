@@ -20,16 +20,16 @@ public class PokerHand {
         this.avaliador = new AvaliadorDeMao();
     }
 
-    public Resultado compareWith(PokerHand outra) {
-        Objects.requireNonNull(outra, "outra mão não pode ser null");
+ public Resultado compareWith(PokerHand outra) {
+    AvaliadorDeMao avaliador = new AvaliadorDeMao();
 
-        ForcaDaMao minhaForca = avaliador.avaliar(this.cartas);
-        ForcaDaMao forcaOponente = avaliador.avaliar(outra.cartas);
+    ForcaDaMao minha = avaliador.avaliar(this.cartas);
+    ForcaDaMao dele  = avaliador.avaliar(outra.cartas);
 
-        if (minhaForca.maiorQue(forcaOponente)) return Resultado.VITORIA;
-        if (minhaForca.menorQue(forcaOponente)) return Resultado.DERROTA;
-        return Resultado.EMPATE; 
-    }
+    if (minha.maiorQue(dele)) return Resultado.VITORIA;
+    if (minha.menorQue(dele)) return Resultado.DERROTA;
+    return Resultado.EMPATE;
+}
 
     private List<Carta> parsearCartas(String hand) {
         String[] tokens = hand.trim().split("\\s+");
@@ -47,4 +47,5 @@ public class PokerHand {
     List<Carta> getCartas() {
         return cartas;
     }
+
 }
